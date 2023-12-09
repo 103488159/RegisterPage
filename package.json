@@ -1,0 +1,16 @@
+{
+  "name": "register_pj",
+  "version": "1.0.0",
+  "description": "lmao",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Minh Vuong",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "mongodb": "4.1"
+  }
+}
