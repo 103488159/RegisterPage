@@ -3,15 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Register Taskj</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
 </head>
+
 <body>
-    <h1>Register Test</h1>
-    <form action="/ip_form" method="post">
-        Email: <input type="text" name="mail"><br><br>
-        Username: <input type="text" name="name"><br><br>
-        Password: <input type="text" name="pass"><br><br>
-        <button type="submit">Register</button>
-    </form>
+    <div id="main-container">
+        <h1>Register Test</h1>
+        <p>Welcome to the register test</p>
+        <form action="/ip_form" method="post">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="mail"><br><br>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="name"><br><br>
+
+            <label for="password">Password:</label>
+            <input type="text" id="password" name="pass"><br><br>
+
+            <button type="reset">Reset Form</button>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

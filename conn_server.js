@@ -9,7 +9,7 @@ const uri = "mongodb+srv://vuongquanngocminh:Themadwizzard01@cluster0.abnlgqt.mo
 
 app.use(bodyParser.urlencoded({ extended: true })); //take value from request by form
 //Creates an Express application. The express() function is a top-level function exported by the express module.
-const port = 3000;
+const port = 4000;
 //at the route send a function with req and res parameter
 
 const client = new MongoClient(uri, {
@@ -49,7 +49,7 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
 })
-//remember that `` is different than '' or "". `` allow to use ${value}
+
 //Ctr + C to close
 // value get from body-parser is just a text type
 
@@ -71,4 +71,3 @@ app.post("/iP_form", (req, res) => {
     console.log(newuser)
     res.send("Register successful");
 })
-//to pass information from form to server. One method is using body parser
