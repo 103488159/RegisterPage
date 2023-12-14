@@ -4,13 +4,15 @@ const bodyParser = require("body-parser");
 const app = express();
 //make app use body parser
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://vuongquanngocminh:Themadwizzard01@cluster0.abnlgqt.mongodb.net/?retryWrites=true&w=majority";
-
+const uri = "mongodb+srv://vuongquanngocminh:<password>@cluster0.abnlgqt.mongodb.net/?retryWrites=true&w=majority";
+const path = require('path');
 
 app.use(bodyParser.urlencoded({ extended: true })); //take value from request by form
 //Creates an Express application. The express() function is a top-level function exported by the express module.
 const port = 4000;
 //at the route send a function with req and res parameter
+
+app.use(express.static(path.resolve(__dirname, 'public')));
 
 const client = new MongoClient(uri, {
     serverApi: {
@@ -40,15 +42,14 @@ async function addtotable(target) {
 const database = client.db("registerpage_db");
 const usercollection = database.collection("users");
 
+
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/index.html"); //like print writer
-})
+    res.sendFile(__dirname + "/views/index.html");
+});
 
-
-
-app.listen(port, () => {
+app.listen(port, () => {    
     console.log(`Example app listening on port ${port}`);
-})
+});
 
 //Ctr + C to close
 // value get from body-parser is just a text type
